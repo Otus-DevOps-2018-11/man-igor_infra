@@ -1,0 +1,10 @@
+{
+  "project_id": "projectx",
+  "source_image_family": "centos",
+  "machine_type": "micro",
+  "image_description": "Deploy ruby application",
+  "disk_size": "15",
+  "disk_type": "pd-standard",
+  "network": "default",
+  "tags": ""
+}
