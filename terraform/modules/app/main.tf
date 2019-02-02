@@ -1,5 +1,5 @@
 resource "google_compute_instance" "app" {
-  name         = "reddit-app"
+  name         = "reddit-app-${var.enviroment}"
   machine_type = "g1-small"
   zone         = "${var.zone}"
   tags         = ["reddit-app"]
@@ -33,6 +33,10 @@ resource "google_compute_instance" "app" {
     source      = "${path.module}/files/puma.service"
     destination = "/tmp/puma.service"
   }
+
+  provisioner "remote-exec" {
+  inline = "export DATABASE_URL=${var.db_internal_ip}:27017",
+   } 
 
   provisioner "remote-exec" {
     script = "${path.module}/files/deploy.sh"
