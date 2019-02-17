@@ -1,0 +1,8 @@
+---
+- name: Configure MongoDB
+  hosts: reddit-db-stage
+  become: true
+
+  roles:
+    - db
+
