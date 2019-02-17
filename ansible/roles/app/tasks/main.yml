@@ -20,6 +20,3 @@
       debug:
         msg: "This host is in {{ env }} environment!!!"
 
-    - name: Show ip address
-      debug:
-        msg: "This host {{ hostvars['reddit-db-stage']['gce_private_ip'] }}"
