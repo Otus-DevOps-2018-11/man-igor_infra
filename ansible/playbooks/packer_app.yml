@@ -2,13 +2,16 @@
 - name: Install Ruby && Bundler
   hosts: all
   become: true
+  
+  roles:
+   - app
 
-  tasks:
-  - name: Install Ruby packages
-    apt:
-      name: "{{ packages }}"
-    vars:
-      packages:
-      - ruby-full
-      - ruby-bundler
-      - build-essential
+#  tasks:
+#  - name: Install Ruby packages
+#    apt:
+#      name: "{{ packages }}"
+#    vars:
+#      packages:
+#      - ruby-full
+#      - ruby-bundler
+#      - build-essential
